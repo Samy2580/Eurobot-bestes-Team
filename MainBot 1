@@ -1,6 +1,6 @@
 from machine import Pin
 import time
-
+from RPi.GPIO as GPIO
 # EUROBOT - MAIN PROGRAM
 # Version 0.1
 
@@ -17,3 +17,26 @@ while True:
     print("Eurobot funktioniert!")
 
     time.sleep(1)
+
+# Bewegen des Bots
+spr = 800    # Anzahl Steps pro Umdrehung
+step = Pin("step", Pin.OUT) # Definieren des Step Pins
+dir = Pin("dir", Pin.OUT) # Definieren des Richtungspins
+step_count = spr # Anzahl schritte
+
+def uhrzeigerumdrehung(spr, step, dir):
+    dir.value(1)    # Setzt Richtungs-Pin auf Im Uhrzeigersinn
+    for _ in range(spr):
+        step.value(1)    # Setzt Step-Pin auf 3.3 V
+        time.sleep_us(1250)
+        step.value(0)    # Setzt Step-Pin auf 0 V
+        time.sleep_us(1250)
+def gegenuhrzeigerumdrehung(spr, step, dir):
+    dir.value(0) # Setzt Richtungs-Pin auf Im Uhrzeigersinn
+    for _ in range(spr):
+        step.value(1) # Setzt Step-Pin auf 3.3 V
+        time.sleep_us(1250)
+        step.value(0) # Setzt Step-Pin auf 0 V
+        time.sleep_us(1250)
+
+
