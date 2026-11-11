@@ -1,6 +1,5 @@
 from machine import Pin
 import time
-from RPi.GPIO as GPIO
 # EUROBOT - MAIN PROGRAM
 # Version 0.1
 
