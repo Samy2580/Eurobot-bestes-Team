@@ -31,6 +31,7 @@ def uhrzeigerumdrehung(spr, step, dir):
         time.sleep_us(1250)
         step.value(0)    # Setzt Step-Pin auf 0 V
         time.sleep_us(1250)
+
 def gegenuhrzeigerumdrehung(spr, step, dir):
     dir.value(0) # Setzt Richtungs-Pin auf gegen den Uhrzeigersinn
     for _ in range(step_count):
