@@ -1,5 +1,5 @@
 import time
-from servo import servo # noch entsprechende library auf dem pico installieren, dient zur vereinfachung der servo steuerung
+from servo import servo # noch entsprechende library auf dem pico installieren, dient zur vereinfachung der servo steuerung, hier der Link zur Erklärung: https://github.com/Samy2580/Eurobot-bestes-Team
 rotationservo1 = Servo(Pin_Id =xy) # Hier noch entsprechende Pin Id einfügen
 
 def servodrehen():
